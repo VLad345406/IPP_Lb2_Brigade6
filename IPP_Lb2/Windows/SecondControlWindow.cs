@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace IPP_Lb2.Windows
 {
@@ -7,6 +8,11 @@ namespace IPP_Lb2.Windows
         public SecondControlWindow()
         {
             InitializeComponent();
+        }
+
+        private void SecondControlWindow_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false;
         }
     }
 }

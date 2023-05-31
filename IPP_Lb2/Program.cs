@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using IPP_Lb2.Windows;
 
@@ -10,9 +7,6 @@ namespace IPP_Lb2
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         private static void StartFirstControlWindow()
         {
             Application.Run(new FirstControlWindow());
@@ -24,7 +18,7 @@ namespace IPP_Lb2
         }
         
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -37,6 +31,8 @@ namespace IPP_Lb2
             threadSecondControlWindow.Start();
             
             Application.Run(new MainWindow());
+            threadFirstControlWindow.Abort();
+            threadSecondControlWindow.Abort();
         }
     }
 }
