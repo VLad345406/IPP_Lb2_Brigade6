@@ -7,28 +7,31 @@ namespace IPP_Lb2
 {
     internal static class Program
     {
-        private static void StartFirstControlWindow()
-        {
-            Application.Run(new FirstControlWindow());
-        }
+        //private static MainWindow _mainWindow;
         
         private static void StartSecondControlWindow()
         {
             Application.Run(new SecondControlWindow());
         }
         
+        private static void StartFirstControlWindow()
+        {
+            Application.Run(new FirstControlWindow());
+        }
+
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var threadStartFirstControlWindow = new ThreadStart(StartFirstControlWindow);
-            var threadFirstControlWindow = new Thread(threadStartFirstControlWindow);
-            threadFirstControlWindow.Start();
             
             var threadStartSecondControlWindow = new ThreadStart(StartSecondControlWindow);
             var threadSecondControlWindow = new Thread(threadStartSecondControlWindow);
             threadSecondControlWindow.Start();
+            
+            var threadStartFirstControlWindow = new ThreadStart(StartFirstControlWindow);
+            var threadFirstControlWindow = new Thread(threadStartFirstControlWindow);
+            threadFirstControlWindow.Start();
             
             Application.Run(new MainWindow());
             threadFirstControlWindow.Abort();

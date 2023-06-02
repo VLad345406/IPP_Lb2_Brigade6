@@ -45,6 +45,7 @@ namespace IPP_Lb2.Windows
             this.buttonUp.TabIndex = 0;
             this.buttonUp.Text = "↑";
             this.buttonUp.UseVisualStyleBackColor = true;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
             // 
             // buttonDown
             // 
@@ -54,6 +55,7 @@ namespace IPP_Lb2.Windows
             this.buttonDown.TabIndex = 1;
             this.buttonDown.Text = "↓";
             this.buttonDown.UseVisualStyleBackColor = true;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
             // 
             // buttonRight
             // 
@@ -63,6 +65,7 @@ namespace IPP_Lb2.Windows
             this.buttonRight.TabIndex = 2;
             this.buttonRight.Text = "→";
             this.buttonRight.UseVisualStyleBackColor = true;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
             // 
             // buttonLeft
             // 
@@ -72,6 +75,7 @@ namespace IPP_Lb2.Windows
             this.buttonLeft.TabIndex = 3;
             this.buttonLeft.Text = "←";
             this.buttonLeft.UseVisualStyleBackColor = true;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
             // 
             // FirstControlWindow
             // 
