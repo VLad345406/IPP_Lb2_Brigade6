@@ -79,6 +79,7 @@ namespace IPP_Lb2.Windows
             client.Close();
         }
         
+        
         private static async Task<string> FunctionReceive(NetworkStream stream)
         {
             var resultBuffer = new byte[1024];
